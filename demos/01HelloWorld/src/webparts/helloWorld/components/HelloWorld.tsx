@@ -13,6 +13,7 @@ export default class HelloWorld extends React.Component<IHelloWorldProps, {}> {
               <span className="ms-font-xl ms-fontColor-white">Welcome to SharePoint!</span>
               <p className="ms-font-l ms-fontColor-white">Customize SharePoint experiences using Web Parts.</p>
               <p className="ms-font-l ms-fontColor-white">{escape(this.props.description)}</p>
+              <p className="ms-font-l ms-fontColor-white">size: {this.props.size}</p>
               <a href="https://aka.ms/spfx" className={styles.button}>
                 <span className={styles.label}>Learn more</span>
               </a>

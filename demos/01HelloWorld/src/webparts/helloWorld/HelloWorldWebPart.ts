@@ -4,7 +4,7 @@ import { Version } from '@microsoft/sp-core-library';
 import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
-  PropertyPaneTextField
+  PropertyPaneTextField, PropertyPaneSlider
 } from '@microsoft/sp-webpart-base';
 
 import * as strings from 'HelloWorldWebPartStrings';
@@ -13,6 +13,7 @@ import { IHelloWorldProps } from './components/IHelloWorldProps';
 
 export interface IHelloWorldWebPartProps {
   description: string;
+  size: number;
 }
 
 export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorldWebPartProps> {
@@ -21,7 +22,8 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
     const element: React.ReactElement<IHelloWorldProps > = React.createElement(
       HelloWorld,
       {
-        description: this.properties.description
+        description: this.properties.description,
+        size: this.properties.size
       }
     );
 
@@ -45,7 +47,8 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
               groupFields: [
                 PropertyPaneTextField('description', {
                   label: strings.DescriptionFieldLabel
-                })
+                }),
+                PropertyPaneSlider('size', { min: 0, max: 100 })
               ]
             }
           ]
