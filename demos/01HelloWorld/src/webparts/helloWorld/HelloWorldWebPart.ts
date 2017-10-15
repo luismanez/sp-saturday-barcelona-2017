@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
-import { Version } from '@microsoft/sp-core-library';
+import { Version, EnvironmentType, Environment } from '@microsoft/sp-core-library';
 import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
@@ -10,6 +10,9 @@ import {
 import * as strings from 'HelloWorldWebPartStrings';
 import HelloWorld from './components/HelloWorld';
 import { IHelloWorldProps } from './components/IHelloWorldProps';
+import { IImageDataProvider } from '../../dataProviders/IImageDataProvider';
+import { MockImageDataProvider } from '../../dataProviders/MockImageDataProvider';
+import { SharepointImageDataProvider } from '../../dataProviders/SharepointImageDataProvider';
 
 export interface IHelloWorldWebPartProps {
   description: string;
@@ -18,10 +21,24 @@ export interface IHelloWorldWebPartProps {
 
 export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorldWebPartProps> {
 
+  private _dataProvider: IImageDataProvider;
+
+  protected async onInit(): Promise<void> {
+    if (Environment.type === EnvironmentType.Local) {
+      this._dataProvider = new MockImageDataProvider();
+    } else {
+      this._dataProvider = new SharepointImageDataProvider(this.context);
+    }
+
+    return super.onInit();
+  }    
+  
   public render(): void {
-    const element: React.ReactElement<IHelloWorldProps > = React.createElement(
+    const element: React.ReactElement<IHelloWorldProps> = React.createElement(
       HelloWorld,
       {
+        context: this.context,
+        dataProvider: this._dataProvider,
         description: this.properties.description,
         size: this.properties.size
       }
