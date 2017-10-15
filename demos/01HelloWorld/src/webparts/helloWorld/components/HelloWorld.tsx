@@ -15,13 +15,15 @@ import {
 import DocumentCardDescription from './documentCardDescription/DocumentCardDescription';
 import DocumentCardTags from './documentCardTags/DocumentCardTags';
 import { IImageItem } from '../../../models/IImageItem';
-
+import { FocusZone } from 'office-ui-fabric-react/lib/FocusZone';
+import { List } from 'office-ui-fabric-react/lib/List';
+import { autobind } from 'office-ui-fabric-react/lib/Utilities';
 
 export default class HelloWorld extends React.Component<IHelloWorldProps, IHelloWorldState> {
-  
+
   private async _getItems(): Promise<void> {
     var images = await this.props.dataProvider.getImages();
-    this.setState({ items: images, isInitialized: true});
+    this.setState({ items: images, isInitialized: true });
   }
 
   constructor(props: IHelloWorldProps) {
@@ -58,23 +60,23 @@ export default class HelloWorld extends React.Component<IHelloWorldProps, IHello
       };
 
       return (
-        <DocumentCard type={DocumentCardType.normal} onClickHref='http://bing.com'>
-          <DocumentCardPreview { ...previewProps } />
-          <DocumentCardTitle
-            title={image.title}
-            shouldTruncate={ true }
-          />
-          <DocumentCardDescription description={image.description}></DocumentCardDescription>
-          <DocumentCardTags tags={image.tags}></DocumentCardTags>
-        </DocumentCard>
+        <div className={styles.box}>
+          <DocumentCard type={DocumentCardType.normal} onClickHref='http://bing.com'>
+            <DocumentCardPreview { ...previewProps } />
+            <DocumentCardTitle
+              title={image.title}
+              shouldTruncate={true}
+            />
+            <DocumentCardDescription description={image.description}></DocumentCardDescription>
+            <DocumentCardTags tags={image.tags}></DocumentCardTags>
+          </DocumentCard>
+        </div>
       );
     });
-    
+
     return (
       <div className={styles.helloWorld}>
-        <div className={styles.container}>
           {images}
-        </div>
       </div>
     );
   }
