@@ -49,7 +49,6 @@ export default class ImageCardList extends React.Component<IImageCardListProps, 
         previewImages: [
           {
             name: image.title,
-            //url: 'http://bing.com',
             previewImageSrc: image.url,
             iconSrc: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABxklEQVRYR+3WO2gVQRTG8V8URSwkiFqkCoigRUBRUBFChJgiVj4K0wWxUBHFwk4b0ULQFClMLCzsAhpFFKOoTYoUUXw1NmKpINhYiCioDKywrHPvzl7uI8Ud2Gq/853/nDmcmR4dXj0dzq8LsCQq8BTDHeqFuVCBN3iCe22GOIyhfwDTCF871ymMFwF6cQmbMYupFhJFAe7iQC7pGGZaBBEF+Iq1uYQ3cLydAA+xP5dwHLcSAQawBbfxJyEmWoH1uJbrgSsJRkGyEa+wBpdxPiEuCpAQ959kJRawPfvzGyN4XmLWNIAJnC0k+4yt+FIHoikAoV8eEL3UHmO0Tj8kAwxiA+4UdtOHt1hXZ5fncLXG/ySAXZjHCpzBZGa2DM+wt+Scf2EPXkR0pQBhKr5Gfxb8E7uzbr+Ai4kd+xHb8K2gLwUIJT9UCPqA09m5L08ECLIwTcNUza+6ACdwvUaCMGQaeUccw82cZ02AMNEWsarCDlOk37ED7zNxFGA1XmYjNcW0quYdduIHogChREerulbUhyv+ZAzgU3bxNHK+VRhCDx3BpvyDJLwL71dxaYL2IAbDbuewrwmGjVg8anW5S6G6AN0K/AXw3HF5yItmlQAAAABJRU5ErkJggg==",
             imageFit: ImageFit.cover,
@@ -60,13 +59,10 @@ export default class ImageCardList extends React.Component<IImageCardListProps, 
       };
 
       return (
-        <div className={styles.box}>
+        <div className={styles.box}>          
           <DocumentCard type={DocumentCardType.normal} onClickHref='http://bing.com'>
             <DocumentCardPreview { ...previewProps } />
-            <DocumentCardTitle
-              title={image.title}
-              shouldTruncate={true}
-            />
+            <DocumentCardTitle title={image.title} shouldTruncate={true} />
             <DocumentCardDescription description={image.description}></DocumentCardDescription>
             <DocumentCardTags tags={image.tags}></DocumentCardTags>
           </DocumentCard>
@@ -76,7 +72,8 @@ export default class ImageCardList extends React.Component<IImageCardListProps, 
 
     return (
       <div className={styles.ImageCardList}>
-          {images}
+        <p>{this.props.description}</p>
+        {images}
       </div>
     );
   }
