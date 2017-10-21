@@ -26,3 +26,19 @@ Create a spfx project without running _npm install_
 ```
 yo @microsoft/sharepoint --skip-install
 ```
+
+Just after a npm install:
+gulp build
+    /lib: pure JS files and maps for debugging
+    /temp: tslist config
+    - types CSS Modules: .scss.ts
+
+gulp serve
+    /dist: JS bundle and manifest (JS is not minified)
+
+gulp bundle --ship (JS minified)
+
+gulp package-solution
+    /sharepoint: .sppkg file and debug folder with .sppkg content before zipping it
+
+gulp clean -> deletes all previous folder except /sharepoint

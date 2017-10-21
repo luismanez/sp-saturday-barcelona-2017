@@ -1,0 +1,11 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "hello-bcn-client-side-solution",
+    "id": "9507b3d1-092c-42e6-9040-57d6399c337e",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/hello-bcn.sppkg"
+  }
+}
