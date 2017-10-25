@@ -44,27 +44,30 @@ gulp package-solution
 gulp clean -> deletes all previous folder except /sharepoint
 
 --
-
+(4'30")
 Crear proyecto basico sin npm install
 Comentar ficheros principales del proyecto (packages.json, gulp.config, WP manifest, WP code)
 Comentar npm install para resolver dependencias (5 mins o max descargando pacjages)
 ---
+(7')
 Abrir proyecto con node_modules
 Comentar toolchain y carpetas autogeneradas y css modules typings
-Comentar local workbench
+Comentar local workbench (comentar cuando ejecute el 'gulp serve')
 ---
-Abrir proyecto ImageCardList
+(3')
+Abrir proyecto HelloBcnFinal
 Comentar SP Workbench y mostrar funcionalidad
 Debug and breakpoints (mencion para el add-in de debug en VSCode)
 ---
-Abrir proyecto ImageCardListLive
+Abrir proyecto HelloBcnLive
 Rellenar Modelo
 Comentar Mock provider
 Rellenar getItems del SP provider
 Rellenar cargar un provider u otro segun environment en el WebPart
-Comentar React components (container, smart, dumb components)
+Comentar React components (container, smart, dumb components, mostrar link: https://medium.com/@delveeng/react-and-flux-in-production-best-practices-c87766c57cb6)
 Comentar Office fabric react components
 Rellenar componentDidMount, initState
 Comentar .map de las imagenes devueltas
 Ejecutar
+---
 Deploy package con localhost como CDN (segun tiempo)
