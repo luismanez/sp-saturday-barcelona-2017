@@ -1,0 +1,18 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "image-card-list-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/imageCardList/ImageCardListWebPart.js",
+          "manifest": "./src/webparts/imageCardList/ImageCardListWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ImageCardListWebPartStrings": "lib/webparts/imageCardList/loc/{locale}.js"
+  }
+}

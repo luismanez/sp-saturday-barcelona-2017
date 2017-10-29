@@ -1,0 +1,28 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "8a910aea-d384-4f8b-86ad-8a41fba4ad7c",
+  "alias": "ImageCardListWebPart",
+  "componentType": "WebPart",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
+  "manifestVersion": 2,
+
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
+
+  "preconfiguredEntries": [{
+    "groupId": "94a378f3-e65e-4112-b081-3e00e88a1eb6", // Other
+    "group": { "default": "Inherits Cloud" },
+    "title": { "default": "Image Card List" },
+    "description": { "default": "Displays images from a SharePoint image gallery" }, 
+    "iconImageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAFcklEQVR4Xu2aX2xTdRTHv+dc/k2GC/piYozhQYMmQkiMwthC2vGgibAxmRGzmE6EOdkWEwzonngS8UXFDSeCG4l7cCpbZyQaWRvCtoyEaMwSnTwYnkyMJgJuk4L3HHMLrbfldr23/7K17WN7+vud7+d3vuf36+2PUOIvKnH9KAMoV0CJEyhboMQLoNwEoxZ4tv3NtcT0Nkz4YWBVMVeFCGYNlpAIHfiy+/A0WeLVoElWVBWz8GRtQrhKpm6knZ1dwwDqS0l8XKtihHbu67pW7GWfanEFMmNVgNoDvjj6VlFvjcl6ywDKFVC2gLceoKewQQStIPgheDDaPxSXYSDEJnppN35cyDtKxj1AB1Ehc/iAgd0pu6pAQTjOwGvUgusLEURGACzx5hy+NYBaV6IU5wA8tRAhZATA7MeJ+VbeCYoAvUYAba6AeQxS1ehWTUQJW7ibYTwDsDwPxff2wQX4iYEDiCCMCpD1G0II7zCwNhYnAmXFhlz3hODoRJOS2SvCYrC21vtrTrsRHovxDMDsQy8TWuPCLPFLsImacc0+sX6EKlmOyQQIimNGC/Z5SXC+2ODZyXUK8wIYK6Jxghk1+LEdvk2X3c7hHUA/LjHwkG2CZyiAr50m1H5sBxC0wZo2AnjEbXLzih8bW6U36CKAhxPAQ0MNvs1b3drBO4BPEGHGsvikEaykVsw5AhhEJebwtw1AxAjcXq0sKFieD4bHPwXoBadhSLWtvq6m180U2QNgVNKLmC0kgOHw2MtQ+jilQA9W8A7gJH5hw1Z2iu3Ugq8cAfShAYQhWyP82XgJj7pZmVQxd/jeClSZNokeMEArY99Tl1bwDqAfHzLwit3XHMFGasXVBC8OYLVcx6QdlgDdRgAdmQIIOvjehM4uI37cVPUD6LGP7cYKngHoSawXwg/M/z8/FGCagYO4C6FoArPYKoIjCeKtbZCwnlowlQmAVL4n0uZ6X83AoUPK67ZMnGWFLz6+Cyt4BmANnrwVuhEkQI8RQLubWKeY4Oj4HiUcT/hMcaKhbvOe2Hsj586tuWkaU16skBEA7Yt28m9A2OJGkArCNIOnqRMRN/HJMadD59cDfIGB5fHPVKduVPCTz1VX/2OPHw6Nv+rFChkBiPadPqwQ4D0o9trtYE/GOv2BcYyvYX+m4ufz/TZf9XQyLK9WyBhAvNtaPYGxN/pzGFgTfV/wKxijrDju5Hm3Z3crbiQ8MaDAroTmdtv3qarJixWyBuC1pIdGJ3YRmd23vkfvK908usPnu5Kp71PN79YKBQUwFB5vJpVTALOtU18B67vJILz43gmCkxUE8nujv/Y+e3zBADiKT2gYiIPgpUvN5HN+bL938r1bKwjwW6N/8/0FB5BW/B0g5BLAT3jxfSoIwdBYo4p1QCIFSWtDXW3CqTXvFZBCvAnoCUCbAL4nbR9J2u/TxnsIyCuAVOJJaVd9XfXnZ85M3n1jxb/tIvQ6M1Y75p1iv/egcd7QvAFIJ96eVRREhdkhJvbbQWTie69g8gLAi3h7woPfXaxazpEOJemAkIB0b7JnvQpMF59zAJmKT5dovj7PKYDFJt6CmjMAi1F8zgAsVvE5ARAMjz+vKgMJx1vAjG11+fJursbNygK3ntKM/Zl0mFk04rOugFsAzv8BGPfeXpFFJT5rANYAw6MTO2D9NQXrry+jraGuOv4UOFdlms9xsrJAPhMr1NhlAEk3YsqXpEr+klRje9cMM+J/MRXKiwthnuhFyabON0YUvG0hJFToHEgxXLKXpRX4a4l1WdqiHr0uT3RESPwMriz0ShRyPqvsDeWzLHrws57Dl4r6XrAbsGUAbigVc0y5Aop5dd1oK1eAG0rFHFPyFfAfUhmPlDeN084AAAAASUVORK5CYII=",
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "description": "Welcome to SharePoint Saturday Barcelona 2017!! This is a cool demo about an Image List Webpart sample.",
+      "size": 45
+    }
+  }]
+}
